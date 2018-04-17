@@ -179,24 +179,12 @@ class Application extends Module
 
     public function initDatabase()
     {
+        // your connetcion to DB adapter and query builder
+        // or system core\db\Connection and init builder pdo()
         $this->db2 = new \mysqli($this->config->db['host'], $this->config->db['user'], $this->config->db['password'], $this->config->db['dbname']);
         if ($this->db2->connect_error) {
             die('Connection Error (' . $this->db2->connect_errno . ') '. $this->db2->connect_error);
         }
-
-        $config = array(
-            'driver'    => 'mysql', // Db driver
-            'host'      => $this->config->db['host'],
-            'database'  => $this->config->db['dbname'],
-            'username'  => $this->config->db['user'],
-            'password'  => $this->config->db['password'],
-            'charset'   => 'utf8', // Optional
-            'collation' => 'utf8_unicode_ci', // Optional
-            'prefix'    => '', // Table prefix, optional
-        );
-
-        $conn = new \Pixie\Connection('mysql', $config);
-        $this->db = new \Pixie\QueryBuilder\QueryBuilderHandler($conn);
     }
 
     /**
