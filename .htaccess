@@ -1,0 +1,18 @@
+Options +SymLinksIfOwnerMatch
+
+RewriteEngine On
+RewriteBase /
+
+#DirectoryIndex index.php
+
+ErrorDocument 403 /ErrorController/action403
+ErrorDocument 404 /ErrorController/action404
+ErrorDocument 500 /ErrorController/action500
+
+RewriteRule (.+)/$ /$1 [L,R=301]
+RewriteRule ^index.html$ index.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule .* index.php [L]
