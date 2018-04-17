@@ -1,0 +1,19 @@
+{
+  "name": "zikwall/simple-mvc",
+  "description": "Minimalistic and easy PHP MVC Framework",
+  "keywords": ["framework", "mvc", "simple", "zikwall"],
+  "type": "project",
+  "support": {
+    "issues": "https://github.com/zikwall/simple-mvc/issues?state=open",
+    "source": "https://github.com/zikwall/simple-mvc"
+  },
+  "authors": [
+    {
+      "name": "Andrey Kapitonov",
+      "email": "andrey.kapitonov.96@gmall.com"
+    }
+  ],
+  "require": {
+    "filp/whoops": "^2.1"
+  }
+}
